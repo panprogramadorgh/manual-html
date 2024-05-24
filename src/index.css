@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: rgba(255, 255, 255, 0.87);
+  --text-color-light: rgba(255, 255, 255, 0.5);
+  --bg-color: rgb(33, 34, 40);
+  --bg-color-light: rgba(40, 47, 64, 0.8);
+  --bg-color-dark: rgba(14, 14, 17, 0.8);
+  --main: #0099ff;
+  --main-light: #47b5ff;
+  --rounded: 12px;
+
+  --text-title: 2.5rem;
+  --text-subtitle: 2rem;
+  --text-header: 1.5rem;
+  --text-regular: 1rem;
+  --text-small: 0.8rem;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: var(--text-regular);
+}
+
+#root {
+  margin: 0 auto;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color-light);
+  border-radius: var(--rounded);
+}
+
+h1 {
+  font-size: var(--text-title);
+}
+
+h2 {
+  font-size: var(--text-subtitle);
+}
+
+h3 {
+  font-size: var(--text-header);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--text-regular);
+}
+
+p {
+  font-size: var(--text-regular);
+}
+
+a {
+  color: var(--main);
+  cursor: text;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

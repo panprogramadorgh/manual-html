@@ -1,0 +1,21 @@
+.GitHub {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin: 10px 15px;
+  font-size: 1.2rem;
+}
+
+.GitHub a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 15px;
+  background-color: var(--bg-color-dark);
+  border-radius: var(--rounded);
+}
+
+.GitHub a svg {
+  width: 30px;
+  height: 30px;
+}

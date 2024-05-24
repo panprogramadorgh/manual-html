@@ -1,0 +1,6 @@
+.Article {
+  margin-bottom: 20px;
+  background-color: var(--bg-color-dark);
+  padding: 15px;
+  border-radius: var(--rounded);
+}

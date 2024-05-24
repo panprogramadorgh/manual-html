@@ -1,0 +1,63 @@
+.App {
+  display: flex;
+}
+
+.App__aside-btn-container {
+  min-height: 50px;
+}
+
+.App__main {
+  flex-grow: 1;
+  padding: 0 3rem;
+  padding-top: 15px;
+  transition: all 0.2s;
+}
+
+.App__main.wide {
+  padding-right: 13rem;
+  padding-left: 13rem;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  animation: logo-spin infinite 20s linear;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .App__main.wide {
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .App__main.wide {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .App__main.wide {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}

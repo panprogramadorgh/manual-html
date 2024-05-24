@@ -1,0 +1,72 @@
+.Aside {
+  min-width: 300px;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 300px;
+  background-color: var(--bg-color-dark);
+  padding-right: 7px;
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.Aside.hidden {
+  min-width: 0;
+  flex-grow: 0;
+  flex-basis: 0;
+  transform: translate(-10px, 0);
+}
+
+.Aside.hidden .AsideBtn {
+  transform: translate(20px, 0);
+}
+
+.Aside__btn-container {
+  padding: 15px 0;
+  padding-bottom: 5px;
+  padding-right: 15px;
+  text-align: end;
+}
+
+.Aside__content-container {
+  height: 75vh;
+  overflow-y: auto;
+}
+
+.Aside__credits {
+  overflow: hidden;
+  flex-grow: 1;
+  padding: 15px;
+  background-color: var(--bg-color-dark);
+  border-radius: var(--rounded);
+  margin: 10px;
+}
+
+.Aside ul {
+  list-style: none;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.Aside a {
+  display: block;
+  padding: 7px 12px;
+  margin: 5px 0;
+  margin-right: 7px;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: var(--rounded);
+  cursor: pointer;
+}
+.Aside li a:hover {
+  text-decoration: none;
+  background-color: var(--bg-color-light);
+}
+
+@keyframes asideitem-fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
