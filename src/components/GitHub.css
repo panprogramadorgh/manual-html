@@ -1,21 +1,49 @@
 .GitHub {
-  flex-grow: 1;
-  flex-basis: 0;
-  margin: 10px 15px;
-  font-size: 1.2rem;
-}
-
-.GitHub a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 15px;
-  background-color: var(--bg-color-dark);
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  gap: 8px;
+  text-wrap: nowrap;
+  margin: 15px;
   border-radius: var(--rounded);
+  color: var(--text-color);
 }
 
-.GitHub a svg {
+.GitHub:hover {
+  text-decoration: none;
+  background-color: var(--bg-color-light);
+}
+
+.GitHub__icon-container {
+  display: flex;
+  align-items: center;
+  padding: 5px 4px;
+  border-radius: var(--rounded);
+  background-color: var(--bg-color-dark);
+  outline: 3px solid var(--text-color-light);
+}
+
+.GitHub__icon-container svg {
   width: 30px;
   height: 30px;
+  color: var(--text-color-light);
+}
+
+.GitHub__message-container {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.GitHub__message-container span:nth-child(1) {
+  font-weight: bold;
+}
+
+.GitHub__message-container span:nth-child(2) {
+  font-size: var(--text-small);
+  color: var(--text-color-light);
+  font-family: var(--font-mono);
 }

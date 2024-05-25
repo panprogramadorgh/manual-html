@@ -1,13 +1,13 @@
 .Aside {
-  min-width: 300px;
-  overflow-x: hidden;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  flex-basis: 300px;
-  background-color: var(--bg-color-dark);
+  flex-basis: 270px;
+  flex-shrink: 0;
   padding-right: 7px;
-  transition: all 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+  overflow: hidden;
+  background-color: var(--bg-color-dark);
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
 }
 
 .Aside.hidden {
@@ -15,10 +15,6 @@
   flex-grow: 0;
   flex-basis: 0;
   transform: translate(-10px, 0);
-}
-
-.Aside.hidden .AsideBtn {
-  transform: translate(20px, 0);
 }
 
 .Aside__btn-container {
@@ -29,8 +25,9 @@
 }
 
 .Aside__content-container {
-  height: 75vh;
+  height: 80vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .Aside__credits {
@@ -45,9 +42,9 @@
 .Aside ul {
   list-style: none;
   padding-bottom: 5px;
-  padding-left: 10px;
+  padding-left: 15px;
 }
-.Aside a {
+.Aside__li a {
   display: block;
   padding: 7px 12px;
   margin: 5px 0;
@@ -57,16 +54,24 @@
   border-radius: var(--rounded);
   cursor: pointer;
 }
-.Aside li a:hover {
+.Aside__li a:hover {
   text-decoration: none;
   background-color: var(--bg-color-light);
 }
 
+.Aside__li.active a {
+  background-color: var(--bg-color-light);
+}
+
 @keyframes asideitem-fadein {
-  from {
+  0% {
     opacity: 0;
+    transform: translate(0, -10px);
   }
-  to {
+  20% {
+    transform: translate(0, 0);
+  }
+  100% {
     opacity: 1;
   }
 }

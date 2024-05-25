@@ -7,22 +7,25 @@
 }
 
 :root {
-  --text-color: rgba(255, 255, 255, 0.87);
-  --text-color-light: rgba(255, 255, 255, 0.5);
-  --bg-color: rgb(33, 34, 40);
-  --bg-color-light: rgba(40, 47, 64, 0.8);
-  --bg-color-dark: rgba(14, 14, 17, 0.8);
+  --text-color: rgba(242, 249, 251, 0.87);
+  --text-color-light: rgba(242, 249, 251, 0.5);
+  --text-color-extra-light: rgba(242, 249, 251, 0.25);
+  --bg-color: rgb(31, 32, 35);
+  --bg-color-light: rgba(67, 68, 74, 0.7);
+  --bg-color-dark: rgba(16, 16, 20, 0.7);
   --main: #0099ff;
   --main-light: #47b5ff;
   --rounded: 12px;
-
+  --border-width: 2px;
   --text-title: 2.5rem;
   --text-subtitle: 2rem;
   --text-header: 1.5rem;
   --text-regular: 1rem;
   --text-small: 0.8rem;
+  --font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, Ubuntu;
+  --font-mono: "Fira Code", "Cascadia Code", "Cascadia Mono", Consolas, Menlo;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font);
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
