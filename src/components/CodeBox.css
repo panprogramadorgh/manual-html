@@ -1,5 +1,5 @@
 .CodeBox {
-  margin: 20px 0;
+  margin: 30px 0;
   animation: fadein 0.2s cubic-bezier(0.1, 0.5, 0.3, 1);
   border-radius: var(--rounded);
 }
@@ -156,7 +156,7 @@
 .CodeBox__line-container__line::after {
   content: "";
   width: 996px;
-  height: 23px;
+  height: 26.4px;
   position: absolute;
   top: 0;
   left: -60px;

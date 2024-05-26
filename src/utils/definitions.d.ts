@@ -3,3 +3,8 @@ export interface Tab {
   content: React.ReactNode[];
   highlightedLines?: number[];
 }
+
+export interface AsideOption {
+  header?: boolean;
+  label: string;
+}

@@ -2,12 +2,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  flex-basis: 270px;
+  flex-basis: 300px;
   flex-shrink: 0;
   padding-right: 7px;
   overflow: hidden;
   background-color: var(--bg-color-dark);
-  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: flex-basis 0.5s cubic-bezier(0.2, 1, 0.2, 1),
+    transform 0.5s cubic-bezier(0.2, 1, 0.2, 1);
 }
 
 .Aside.hidden {
@@ -20,8 +21,8 @@
 .Aside__btn-container {
   padding: 15px 0;
   padding-bottom: 5px;
-  padding-right: 15px;
-  text-align: end;
+  padding-left: 15px;
+  text-align: start;
 }
 
 .Aside__content-container {
@@ -44,19 +45,95 @@
   padding-bottom: 5px;
   padding-left: 15px;
 }
-.Aside__li a {
-  display: block;
-  padding: 7px 12px;
+
+.Aside__li {
+  position: relative;
   margin: 5px 0;
-  margin-right: 7px;
-  text-decoration: none;
+  max-width: 100%;
+  padding-right: 10px;
+}
+
+.Aside__gradient-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30px;
+  display: flex;
+}
+
+.Aside__gradient-container-gradient {
+  height: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+  background: linear-gradient(to right, transparent, var(--bg-color-dark));
+}
+.Aside__gradient-container-solid {
+  height: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+  background-color: var(--bg-color-dark);
+}
+
+.Aside__li.header {
+  padding-top: 15px;
+  position: sticky;
+  z-index: 500;
+  position: -webkit-sticky; /* Para compatibilidad con Safari */
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color-dark);
+}
+
+.Aside__li button {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  padding: 8px 12px;
+  text-wrap: nowrap;
   color: var(--text-color);
   border-radius: var(--rounded);
   cursor: pointer;
+  font-weight: 500;
+  background-color: transparent;
 }
-.Aside__li a:hover {
+
+.Aside__li h3 {
+  font-weight: 800;
+  font-size: var(--text-header);
+}
+
+.Aside__li button:hover {
   text-decoration: none;
-  background-color: var(--bg-color-light);
+  background-color: var(--bg-color-light-solid);
+}
+
+.Aside__li button.active {
+  background-color: var(--main);
+}
+
+.Aside__li button:hover .Aside__gradient-container-gradient {
+  background: linear-gradient(
+    to left,
+    var(--bg-color-light-solid),
+    transparent
+  );
+}
+
+.Aside__li button:hover .Aside__gradient-container-solid {
+  background-color: var(--bg-color-light-solid);
+  border-top-right-radius: var(--rounded);
+  border-bottom-right-radius: var(--rounded);
+}
+
+.Aside__li button.active .Aside__gradient-container-gradient {
+  background: linear-gradient(to left, var(--main), transparent);
+}
+
+.Aside__li button.active .Aside__gradient-container-solid {
+  background: var(--main);
+  border-top-right-radius: var(--rounded);
+  border-bottom-right-radius: var(--rounded);
 }
 
 .Aside__li.active a {

@@ -12,14 +12,16 @@
   --text-color-extra-light: rgba(242, 249, 251, 0.25);
   --bg-color: rgb(31, 32, 35);
   --bg-color-light: rgba(67, 68, 74, 0.7);
-  --bg-color-dark: rgba(16, 16, 20, 0.7);
+  --bg-color-light-solid: rgba(67, 68, 74, 1);
+  --bg-color-dark: rgb(20, 20, 25);
   --main: #0099ff;
-  --main-light: #47b5ff;
+  --main-light: #26a8ff;
   --rounded: 12px;
   --border-width: 2px;
   --text-title: 2.5rem;
   --text-subtitle: 2rem;
   --text-header: 1.5rem;
+  --text-big: 1.13rem;
   --text-regular: 1rem;
   --text-small: 0.8rem;
   --font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, Ubuntu;
@@ -43,6 +45,14 @@
   padding: 0;
 }
 
+body {
+  font-size: var(--text-big);
+}
+
+::selection {
+  background-color: var(--main);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -54,32 +64,48 @@
 
 h1 {
   font-size: var(--text-title);
+  margin: 20px;
 }
 
 h2 {
   font-size: var(--text-subtitle);
+  margin: 15px 0;
 }
 
 h3 {
   font-size: var(--text-header);
+  margin: 15px 0;
 }
 
 h4,
 h5,
 h6 {
   font-size: var(--text-regular);
+  margin: 10px 0;
 }
 
 p {
-  font-size: var(--text-regular);
+  margin: 15px 0;
+  font-size: var(--text-big);
+  font-weight: 500;
 }
 
 a {
   color: var(--main);
   cursor: text;
   text-decoration: none;
+  font-weight: 800;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+strong {
+  color: var(--main);
+  font-weight: 800;
+}
+
+li strong {
+  color: var(--text-color);
 }

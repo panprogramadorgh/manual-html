@@ -5,7 +5,9 @@ interface Props {}
 const Header: FC<Props> = ({}) => {
   return (
     <header className="Header">
-      <h1>Introduccion a HTML</h1>
+      <h1>
+        Desarrollo de <strong>Aplicaciones Web</strong>
+      </h1>
     </header>
   );
 };

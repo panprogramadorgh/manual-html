@@ -11,18 +11,20 @@
   align-items: center;
   flex-grow: 1;
   padding: 0 2rem;
-  padding-top: 15px;
+  padding-top: 2rem;
   transition: all 0.2s;
 }
 
 .App__aside-btn-container {
   position: fixed;
   top: 0;
+  z-index: 500;
   width: 100%;
   height: 75px;
   display: flex;
   align-items: center;
   padding-left: 1rem;
+  background-color: var(--bg-color);
 }
 
 .App__section-container {
@@ -31,6 +33,36 @@
 
 .App__section-container article {
   margin-bottom: 50px;
+}
+
+.App__section-container article p.highlighted {
+  margin: 30px 0;
+  line-height: 2.5;
+  border: var(--border-width) dashed var(--main);
+  background-color: #0099ff30;
+  padding: 15px;
+  border-radius: var(--rounded);
+  font-weight: bold;
+}
+
+.App__section-container article img {
+  margin: 15px 0;
+  width: 100%;
+  border-radius: var(--rounded);
+}
+
+.App__section-container article > span {
+  font-size: var(--text-regular);
+  margin: 0 5px;
+  font-family: var(--font-mono);
+  padding: 3px;
+  border-radius: var(--rounded);
+  background-color: var(--bg-color-light);
+  outline: var(--border-width) solid var(--text-color-extra-light);
+}
+
+.App__section-container article ul, .App__section-container article ol {
+  padding-left: 50px;
 }
 
 .logo {

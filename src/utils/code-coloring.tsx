@@ -3,6 +3,7 @@ import { ReactNode, FC } from "react";
 const targetWords = {
   keywords: [
     // html tags
+    "style",
     "html",
     "meta",
     "head",
