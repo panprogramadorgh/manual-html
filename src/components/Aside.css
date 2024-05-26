@@ -140,6 +140,25 @@
   background-color: var(--bg-color-light);
 }
 
+@media only screen and (max-width: 700px) {
+  .Aside {
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.3s cubic-bezier(0.2, 1, 0.2, 1),
+      transform 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+  }
+  .Aside.hidden {
+    width: 0;
+    transform: translate(-10px, 0);
+  }
+  .Aside ul {
+    padding-left: 30px;
+  }
+}
+
 @keyframes asideitem-fadein {
   0% {
     opacity: 0;

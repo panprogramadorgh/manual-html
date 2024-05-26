@@ -76,7 +76,6 @@ function App() {
                   correspondiente a esta aplicacion.
                 </p>
                 <img
-                  height={560}
                   src="/imgs/github-profile.png"
                   alt="imagen de perfil de github"
                 />
