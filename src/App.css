@@ -31,10 +31,6 @@
   width: min(100%, 1000px);
 }
 
-.App__section-container article {
-  margin-bottom: 50px;
-}
-
 .App__section-container article p.highlighted {
   margin: 30px 0;
   line-height: 2.5;
@@ -61,7 +57,8 @@
   outline: var(--border-width) solid var(--text-color-extra-light);
 }
 
-.App__section-container article ul, .App__section-container article ol {
+.App__section-container article ul,
+.App__section-container article ol {
   padding-left: 50px;
 }
 

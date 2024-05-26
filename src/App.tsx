@@ -50,6 +50,7 @@ function App() {
                   temario mas facilmente, mejorando asi la experiencia de uso.
                 </p>
               </article>
+              <hr />
               <article id="desarrollo-manual">
                 <h2>Desarrollo del manual</h2>
                 <p>
@@ -80,6 +81,7 @@ function App() {
                   alt="imagen de perfil de github"
                 />
               </article>
+              <hr />
               <article id="lenguaje-html">
                 <h2>Lenguaje HTML</h2>
                 <h3>¿ Cual es el significado de HTML ?</h3>
@@ -129,6 +131,7 @@ function App() {
                 </p>
                 <Page page="/code/index.html" />
               </article>
+              <hr />
               <article id="historia-html">
                 <h2>Historia de HTML</h2>
                 <h3>Orígenes y Creación</h3>

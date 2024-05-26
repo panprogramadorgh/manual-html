@@ -18,8 +18,8 @@
   --main-light: #26a8ff;
   --rounded: 12px;
   --border-width: 2px;
-  --text-title: 2.5rem;
-  --text-subtitle: 2rem;
+  --text-title: 3rem;
+  --text-subtitle: 2.5rem;
   --text-header: 1.5rem;
   --text-big: 1.13rem;
   --text-regular: 1rem;
@@ -64,7 +64,7 @@ body {
 
 h1 {
   font-size: var(--text-title);
-  margin: 20px;
+  margin: 50px 0;
 }
 
 h2 {
@@ -108,4 +108,10 @@ strong {
 
 li strong {
   color: var(--text-color);
+}
+
+hr {
+  width: 100%;
+  border: var(--border-width) dashed var(--text-color-extra-light);
+  margin: 100px 0;
 }
