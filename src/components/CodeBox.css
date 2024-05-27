@@ -4,6 +4,10 @@
   border-radius: var(--rounded);
 }
 
+.CodeBox *::selection {
+  background-color: var(--text-color-extra-light);
+}
+
 .CodeBox.skeleton {
   animation: none;
 }
@@ -17,9 +21,9 @@
   padding: 0;
   border-top-left-radius: var(--rounded);
   border-top-right-radius: var(--rounded);
-  border-right: var(--border-width) solid var(--text-color-extra-light);
-  border-top: var(--border-width) solid var(--text-color-extra-light);
-  border-left: var(--border-width) solid var(--text-color-extra-light);
+  border-right: var(--border-width) solid var(--border-color);
+  border-top: var(--border-width) solid var(--border-color);
+  border-left: var(--border-width) solid var(--border-color);
 }
 
 .CodeBox__header__btn-container {
@@ -58,6 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 5px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--rounded);
@@ -69,11 +74,11 @@
 }
 
 .CodeBox__header__tab-container__tab:hover {
-  border-color: var(--text-color-extra-light);
+  border-color: var(--border-color);
 }
 
 .CodeBox__header__tab-container__tab.active {
-  border-color: var(--text-color-extra-light);
+  border-color: var(--border-color);
   background-color: var(--bg-color);
 }
 
@@ -100,9 +105,8 @@
   padding-right: 0;
   background-color: var(--bg-color-dark);
   font-family: var(--font-mono);
-  border-right: var(--border-width) solid var(--text-color-extra-light);
-  border-left: var(--border-width) solid var(--text-color-extra-light);
-
+  border-right: var(--border-width) solid var(--border-color);
+  border-left: var(--border-width) solid var(--border-color);
   overflow-x: auto;
 }
 
@@ -155,7 +159,7 @@
 
 .CodeBox__line-container__line::after {
   content: "";
-  width: 996px;
+  max-width: 1000px;
   height: 26.4px;
   position: absolute;
   top: 0;
@@ -168,45 +172,37 @@
 }
 
 .CodeBox__line-container__line.highlighted::after {
-  background-color: #0099ff20;
+  background-color: var(--main-extra-dark);
 }
 
 .CodeBox__line-container__line .token {
-  color: #81ff85;
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  outline: none;
 }
 
-.CodeBox__line-container__line .token.keyword {
-  color: #ed73c3;
+.CodeBox__line-container__line .token.tag {
+  color: var(--main);
+  font-weight: 800;
 }
 
-.CodeBox__line-container__line .token.operator {
-  color: #ed73c3;
+.CodeBox__line-container__line .token.attr {
+  color: var(--main-light);
+  font-weight: 800;
 }
 
-.CodeBox__line-container__line .token.punctuation {
-  color: #ebeef1;
-}
-
-.CodeBox__line-container__line .token.value {
-  color: #c49ff8;
+.CodeBox__line-container__line .token.symbol {
+  color: var(--text-color);
 }
 
 .CodeBox__line-container__line .token.value.string {
-  color: #e6ec76;
+  color: #d79357;
+  font-weight: 800;
 }
 
-.CodeBox__line-container__line .token.method {
-  color: #80f9ff;
-}
-
-.CodeBox__line-container__line .token.type {
-  color: #80f9ff;
-}
-.CodeBox__line-container__line .token.primitive-type {
-  color: #80f9ff;
-}
-
-.CodeBox__line-container__line .token.comment {
+/* .CodeBox__line-container__line .token.comment {
   white-space: pre;
   color: var(--text-color-extra-light);
   font-weight: 600;
@@ -215,18 +211,18 @@
 
 .CodeBox__line-container__line:hover .token.comment {
   color: var(--text-color);
-}
+} */
 
 .CodeBox__line-container__line:hover::after,
 .CodeBox__line-container__line:focus::after {
-  border-color: var(--text-color-extra-light);
-  background-color: var(--background-color);
+  border-color: var(--border-color);
+  background-color: var(--bg-color);
 }
 
 .CodeBox__line-container__line.highlighted:hover::after,
 .CodeBox__line-container__line.highlighted:focus::after {
-  border-color: #0099ff;
-  background-color: #0099ff40;
+  border-color: var(--main);
+  background-color: var(--main-dark);
 }
 
 .CodeBox__line-container__line::marker {
@@ -262,10 +258,10 @@
   background-color: var(--bg-color-dark);
   border-bottom-left-radius: var(--rounded);
   border-bottom-right-radius: var(--rounded);
-  border-left: var(--border-width) solid var(--text-color-extra-light);
-  border-right: var(--border-width) solid var(--text-color-extra-light);
-  border-bottom: var(--border-width) solid var(--text-color-extra-light);
-  border-top: var(--border-width) solid var(--text-color-extra-light);
+  border-left: var(--border-width) solid var(--border-color);
+  border-right: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
+  border-top: var(--border-width) solid var(--border-color);
 }
 
 .CodeBox__footer__btn {

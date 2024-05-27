@@ -21,6 +21,9 @@ const asideOptions: { [key: string]: AsideOption } = {
   "historia-html": {
     label: "Historia de HTML",
   },
+  "estructura-html": {
+    label: "Estructura de HTML",
+  },
 };
 
 export default asideOptions;

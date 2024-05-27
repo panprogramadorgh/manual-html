@@ -1,4 +1,79 @@
 .Page {
   background-color: #fff;
   border-radius: var(--rounded);
+  outline: var(--border-width) solid var(--bg-color-light);
+}
+
+.Page__header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+
+  outline: var(--border-width) solid var(--bg-color-light);
+  background-color: var(--bg-color-dark);
+  border-top-left-radius: var(--rounded);
+  border-top-right-radius: var(--rounded);
+}
+
+.Page__header__filename {
+  user-select: none;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  font-family: var(--font) !important;
+  font-size: var(--text-big) !important;
+}
+
+.Page__header__btn-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  height: 50px;
+}
+
+.Page__header__btn-container__btn {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.Page__header__btn-container__btn.red {
+  background-color: #ff004e;
+}
+
+.Page__header__btn-container__btn.yellow {
+  background-color: #ffea00;
+}
+
+.Page__header__btn-container__btn.green {
+  background-color: #30ff00;
+}
+
+.Page__header__a-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+
+.Page__header__a-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--rounded);
+  padding: 12px;
+}
+
+.Page__header__a-container a:hover {
+  background-color: var(--bg-color-light);
+}
+
+.Page__header__a-container a svg {
+  width: 100%;
+  height: 100%;
+  color: var(--text-color-light);
 }

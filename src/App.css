@@ -3,10 +3,13 @@
   min-height: 100vh;
 }
 
-.App__main {
+.App__main-container {
   max-height: 100vh;
-  display: flex;
   overflow-y: auto;
+}
+
+.App__main-container__main {
+  display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
@@ -15,7 +18,7 @@
   transition: all 0.2s;
 }
 
-.App__aside-btn-container {
+.App__main-container__main__aside-btn-container {
   position: fixed;
   top: 0;
   z-index: 500;
@@ -27,38 +30,38 @@
   background-color: var(--bg-color);
 }
 
-.App__section-container {
+.App__main-container__main__section-container {
   width: min(100%, 1000px);
 }
 
-.App__section-container article p.highlighted {
+.App__main-container__main__section-container article p.highlighted {
   margin: 30px 0;
   line-height: 2.5;
   border: var(--border-width) dashed var(--main);
-  background-color: #0099ff30;
+  background-color: var(--main-dark);
   padding: 15px;
   border-radius: var(--rounded);
   font-weight: bold;
 }
 
-.App__section-container article img {
+.App__main-container__main__section-container article img {
   margin: 15px 0;
   width: 100%;
   border-radius: var(--rounded);
 }
 
-.App__section-container article > span {
+.App__main-container__main__section-container article span {
   font-size: var(--text-regular);
   margin: 0 5px;
   font-family: var(--font-mono);
   padding: 3px;
   border-radius: var(--rounded);
   background-color: var(--bg-color-light);
-  outline: var(--border-width) solid var(--text-color-extra-light);
+  outline: var(--border-width) solid var(--border-color-light);
 }
 
-.App__section-container article ul,
-.App__section-container article ol {
+.App__main-container__main__section-container article ul,
+.App__main-container__main__section-container article ol {
   padding-left: 50px;
 }
 

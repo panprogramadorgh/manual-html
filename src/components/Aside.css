@@ -105,7 +105,7 @@
 
 .Aside__li button:hover {
   text-decoration: none;
-  background-color: var(--bg-color-light-solid);
+  background-color: var(--bg-color-light);
 }
 
 .Aside__li button.active {

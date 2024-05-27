@@ -38,8 +38,11 @@ const Aside: FC<Props> = ({ hidden, asideBtnAction }) => {
   useEffect(() => {
     updateQuery(currentOpcion);
     const elToScroll = document.getElementById(currentOpcion);
-    const appMain = document.querySelector(".App__main");
-    appMain?.scrollTo({ top: elToScroll?.offsetTop, behavior: "smooth" });
+    const appMain = document.querySelector(".App__main-container");
+    appMain?.scrollTo({
+      top: elToScroll?.offsetTop ? elToScroll?.offsetTop - 100 : undefined,
+      behavior: "smooth",
+    });
   }, [currentOpcion]);
 
   const handleClick = (newContent: string) => {

@@ -1,0 +1,8 @@
+.Footer {
+  height: 300px;
+  width: 100%;
+  margin: 0;
+  margin-top: 100px;
+  background-color: var(--bg-color-light);
+  border-top: var(--border-width) solid var(--border-color);
+}

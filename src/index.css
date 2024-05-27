@@ -12,12 +12,15 @@
   --text-color-extra-light: rgba(242, 249, 251, 0.25);
   --bg-color: rgb(31, 32, 35);
   --bg-color-light: rgba(67, 68, 74, 0.7);
-  --bg-color-light-solid: rgba(67, 68, 74, 1);
   --bg-color-dark: rgb(20, 20, 25);
   --main: #0099ff;
-  --main-light: #26a8ff;
-  --rounded: 12px;
+  --main-light: #81ccff;
+  --main-dark: #0099ff50;
+  --main-extra-dark: #0099ff20;
+  --rounded: 0.8em;
   --border-width: 2px;
+  --border-color: rgba(67, 68, 74, 0.7);
+  --border-color-light: rgba(99, 101, 110, 0.7);
   --text-title: 3rem;
   --text-subtitle: 2.5rem;
   --text-header: 1.5rem;
@@ -64,28 +67,33 @@ body {
 
 h1 {
   font-size: var(--text-title);
-  margin: 50px 0;
+  margin-top: 50px;
+  margin-bottom: 15px;
 }
 
 h2 {
   font-size: var(--text-subtitle);
-  margin: 15px 0;
+  margin-top: 50px;
+  margin-bottom: 15px;
 }
 
 h3 {
   font-size: var(--text-header);
-  margin: 15px 0;
+  margin-top: 15px;
+  margin-bottom: 7px;
 }
 
 h4,
 h5,
 h6 {
   font-size: var(--text-regular);
-  margin: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 p {
-  margin: 15px 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
   font-size: var(--text-big);
   font-weight: 500;
 }
