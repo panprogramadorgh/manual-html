@@ -30,7 +30,7 @@ const CodeBox: FC<Props> = ({ skeletonLines, getTabs, linesFadeout }) => {
     getTabs().then((tabs) => {
       setTimeout(() => {
         setTabs(tabs);
-      }, Math.floor(Math.random() * 600 + 200));
+      }, 1000);
     });
   }, []);
 

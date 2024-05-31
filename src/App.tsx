@@ -14,6 +14,7 @@ import fromStringToCode from "./utils/code-coloring/from-string-to-code";
 import { getLocalStorage, setLocalStorage } from "./utils/local-storage";
 
 import "./App.css";
+import CodeBoxPage from "./components/CodeBoxPage";
 
 function App() {
   const [showAside, setShowAside] = useState<boolean>(
@@ -115,7 +116,6 @@ function App() {
                           content: fromStringToCode(
                             await fetchCode("index.html")
                           ),
-                          highlightedLines: [10, 11, 12],
                         },
                       ];
                     }}
@@ -346,7 +346,6 @@ function App() {
                   </p>
                   <Page page="/code/estructura-html5.html" />
                   <br />
-                  <h3>Explicacion de etiquetas basicas de la estructura</h3>
                   <p>
                     Para definir el tipo de documento y la versión de HTML. En
                     HTML5, se utiliza simplemente{" "}
@@ -362,6 +361,102 @@ function App() {
                     el documento, como el título y enlaces a hojas de estilo
                     externas.
                   </p>
+                  <p>
+                    La etiqueta <span>{"<body>"}</span> contiene el resto de
+                    etiquetas que definiran la estructura de la pagina.
+                  </p>
+                  <br />
+                  <h3>Explicacion de los atributos de etiquetas</h3>
+                  <p>
+                    Los atributos en HTML son características o propiedades que
+                    se añaden a las etiquetas HTML para proporcionar información
+                    adicional sobre los elementos que describen. Estos atributos
+                    afectan el comportamiento y la presentación de los elementos
+                    en la página web.
+                  </p>
+                  <h3>Características de los atributos en HTML:</h3>
+                  <ul>
+                    <li>
+                      <strong>Especifican propiedades de los elementos</strong>:
+                      Los atributos proporcionan información adicional sobre los
+                      elementos HTML, como su identificación, clase, estilo, y
+                      más.
+                    </li>
+                    <li>
+                      <strong>Siempre en la etiqueta de apertura</strong>: Los
+                      atributos se colocan siempre dentro de la etiqueta de
+                      apertura de un elemento HTML.
+                    </li>
+                    <li>
+                      <strong>Formato clave-valor</strong>: Los atributos tienen
+                      un formato de clave-valor. La clave es el nombre del
+                      atributo y el valor es la información que le
+                      proporcionamos. Ejemplo: atributo="valor".
+                    </li>
+                    <li>
+                      <strong>Entre comillas</strong>: El valor de un atributo
+                      generalmente se coloca entre comillas dobles (aunque las
+                      comillas simples también son válidas).
+                    </li>
+                  </ul>
+                  <br />
+                  <h3>Ejemplos comunes de atributos:</h3>
+                  <CodeBoxPage
+                    page={<Page page="/code/atributo-id.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "atributo-id.html",
+                              content: fromStringToCode(
+                                await fetchCode("atributo-id.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                  <br />
+                  <CodeBoxPage
+                    page={<Page page="/code/atributo-class.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "atributo-class.html",
+                              content: fromStringToCode(
+                                await fetchCode("atributo-class.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                  <br />
+                  <CodeBoxPage
+                    page={<Page page="/code/atributo-href.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "atributo-href.html",
+                              content: fromStringToCode(
+                                await fetchCode("atributo-href.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
                 </article>
                 <hr />
                 <article id="que-son-metadatos">
@@ -383,7 +478,7 @@ function App() {
                     HTML:
                   </p>
                   <CodeBox
-                    skeletonLines={18}
+                    skeletonLines={8}
                     getTabs={async () => {
                       return [
                         {
@@ -553,19 +648,41 @@ function App() {
                       contenido para facilitar el diseño y la organización.
                     </li>
                   </ul>
-                  <CodeBox
-                    skeletonLines={3}
-                    getTabs={async () => {
-                      return [
-                        {
-                          label: "etiqueta-div.html",
-                          content: fromStringToCode(
-                            await fetchCode("etiqueta-div.html")
-                          ),
-                        },
-                      ];
-                    }}
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-div.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={3}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-div.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-div.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
                   />
+                  <p>
+                    <span>{"<p>"}</span> (Paragraph)
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Define un párrafo de texto.
+                      Los navegadores aplican un espacio antes y después de cada
+                      párrafo para separarlos visualmente.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Para agrupar texto en bloques
+                      separados, mejorando la legibilidad.
+                    </li>
+                  </ul>
+                  <p>
+                    <span>{"<h1> a <h6>"}</span> (Headings)
+                  </p>
                 </article>
               </section>
             </div>

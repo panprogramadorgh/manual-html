@@ -27,12 +27,10 @@ function fromStringToCode(str: string): ReactNode[] {
         const replacetokens = () => {
           const kwIndex = currentLine().indexOf(tag);
           if (kwIndex === -1) return;
-          const supportedCharacters = [...targetWords.symbols, " ", undefined];
-          if (!supportedCharacters.includes(currentLine()[kwIndex - 1])) return;
-          if (
-            !supportedCharacters.includes(currentLine()[kwIndex + tag.length])
-          )
-            return;
+          const tagPrefix = ["/", "<"];
+          const tagSubfix = [" ", ">"];
+          if (!tagPrefix.includes(currentLine()[kwIndex - 1])) return;
+          if (!tagSubfix.includes(currentLine()[kwIndex + tag.length])) return;
 
           tokens.splice(kwIndex, tag.length, () => (
             <span className="token tag">{tag}</span>
@@ -117,7 +115,7 @@ function fromStringToCode(str: string): ReactNode[] {
     };
 
     // Ejecutando en el orden deseado todas las funciones que alteraran la matriz de tokens
-    [colorTags, colorAttrs, colorSymbols, colorStrings].forEach((fn) => fn());
+    [colorStrings, colorTags, colorAttrs, colorSymbols].forEach((fn) => fn());
 
     const reactNodeLine = (
       <>

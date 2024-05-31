@@ -1,0 +1,21 @@
+.CodeBoxPage {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.CodeBoxPage .CodeBox {
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 300px;
+  height: 100%;
+}
+
+.CodeBoxPage .Page {
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 350px;
+  height: 100%;
+}

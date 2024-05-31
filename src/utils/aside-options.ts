@@ -29,10 +29,17 @@ const asideOptions: { [key: string]: AsideOption } = {
     label: "Metadatos",
   },
   "que-son-metadatos": {
-    label: "¿ Que son ?",
+    label: "Proposito",
   },
   "etiquetas-metadatos": {
     label: "Etiquetas metadatos",
+  },
+  etiquetas: {
+    header: true,
+    label: "Etiquetas",
+  },
+  "etiquetas-bloque": {
+    label: "Etiquetas bloque",
   },
 };
 
