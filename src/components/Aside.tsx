@@ -40,7 +40,7 @@ const Aside: FC<Props> = ({ hidden, asideBtnAction }) => {
     const elToScroll = document.getElementById(currentOpcion);
     const appMain = document.querySelector(".App__main-container");
     appMain?.scrollTo({
-      top: elToScroll?.offsetTop ? elToScroll?.offsetTop - 100 : undefined,
+      top: elToScroll?.offsetTop ? elToScroll?.offsetTop : undefined,
       behavior: "smooth",
     });
   }, [currentOpcion]);

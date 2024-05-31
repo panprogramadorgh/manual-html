@@ -24,6 +24,16 @@ const asideOptions: { [key: string]: AsideOption } = {
   "estructura-html": {
     label: "Estructura de HTML",
   },
+  metadatos: {
+    header: true,
+    label: "Metadatos",
+  },
+  "que-son-metadatos": {
+    label: "¿ Que son ?",
+  },
+  "etiquetas-metadatos": {
+    label: "Etiquetas metadatos",
+  },
 };
 
 export default asideOptions;

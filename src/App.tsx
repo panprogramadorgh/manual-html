@@ -315,7 +315,7 @@ function App() {
                       ];
                     }}
                   />
-                  <h3>Estructura de los documentos</h3>
+                  <h3>Estructura basica de los documentos</h3>
                   <p>
                     Cuando queremos desarrollar una pagina web debemos generar
                     una estructura base sobre la que empezaremos a escribir el
@@ -345,6 +345,227 @@ function App() {
                     preferido, deberiamos ver lo siguiente.
                   </p>
                   <Page page="/code/estructura-html5.html" />
+                  <br />
+                  <h3>Explicacion de etiquetas basicas de la estructura</h3>
+                  <p>
+                    Para definir el tipo de documento y la versión de HTML. En
+                    HTML5, se utiliza simplemente{" "}
+                    <span>{"<!DOCTYPE html>"}</span>.
+                  </p>
+                  <p>
+                    La etiqueta <span>{"<html>"}</span> representa la raíz de un
+                    documento HTML. Todos los demás elementos deben estar
+                    contenidos dentro de esta etiqueta.
+                  </p>
+                  <p>
+                    La etiqueta <span>{"<head>"}</span> contiene metadatos sobre
+                    el documento, como el título y enlaces a hojas de estilo
+                    externas.
+                  </p>
+                </article>
+                <hr />
+                <article id="que-son-metadatos">
+                  <h2>Metadatos de los documentos</h2>
+                  <h3>¿ Que son los metadatos en HTML ?</h3>
+                  <p>
+                    Los metadatos en HTML son información adicional sobre una
+                    página web que no se muestra directamente en la pantalla del
+                    usuario, pero que es crucial para los navegadores web,
+                    motores de búsqueda y otras aplicaciones. Estos datos ayudan
+                    a los navegadores a entender mejor cómo mostrar la página y
+                    a los motores de búsqueda a indexarla correctamente. Los
+                    metadatos se colocan dentro de la etiqueta{" "}
+                    <span>{"<head>"}</span> de un documento HTML.
+                  </p>
+                  <h3>Ejemplo de Metadatos en HTML</h3>
+                  <p>
+                    Aquí hay un ejemplo básico de cómo se ven los metadatos en
+                    HTML:
+                  </p>
+                  <CodeBox
+                    skeletonLines={18}
+                    getTabs={async () => {
+                      return [
+                        {
+                          label: "metadatos.html",
+                          content: fromStringToCode(
+                            await fetchCode("metadatos.html")
+                          ),
+                        },
+                      ];
+                    }}
+                  />
+                </article>
+                <hr />
+                <article id="etiquetas-metadatos">
+                  <h2>Principales etiquetas de metadatos</h2>
+                  <br />
+                  <p>
+                    <span>{'<meta charset="UTF-8">'}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Propósito</strong>: Especifica la codificación de
+                      caracteres que debe usar el navegador. UTF-8 es una
+                      codificación estándar que soporta la mayoría de los
+                      caracteres y símbolos utilizados en la web.
+                    </li>
+                    <li>
+                      <strong>Importancia</strong>: Asegura que los caracteres
+                      especiales se muestren correctamente en la página.
+                    </li>
+                  </ul>
+                  <p>
+                    <span>
+                      {
+                        '<meta name="description" content="Una breve descripción de mi página web.">'
+                      }
+                    </span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Propósito</strong>: Proporciona una breve
+                      descripción de la página. Los motores de búsqueda como
+                      Google utilizan este contenido para mostrar descripciones
+                      en los resultados de búsqueda.
+                    </li>
+                    <li>
+                      <strong>Importancia</strong>: Ayuda a mejorar el SEO
+                      (optimización para motores de búsqueda) y a atraer
+                      visitantes a tu sitio.
+                    </li>
+                  </ul>
+                  <p>
+                    <span>
+                      {
+                        '<meta name="keywords" content="HTML, metadatos, tutorial">'
+                      }
+                    </span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Propósito</strong>: Lista de palabras clave
+                      relevantes para el contenido de la página.
+                    </li>
+                    <li>
+                      <strong>Importancia</strong>: Aunque menos importante en
+                      la actualidad para SEO, todavía puede ayudar a los motores
+                      de búsqueda a entender el tema de tu página.
+                    </li>
+                  </ul>
+                  <p>
+                    <span>{'<meta name="author" content="Tu Nombre">'}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Propósito</strong>: Especifica el autor del
+                      documento.
+                    </li>
+                    <li>
+                      <strong>Importancia</strong>: Proporciona crédito al
+                      creador de la página y puede ser útil para fines de
+                      atribución y copyright.
+                    </li>
+                  </ul>
+                  <p>
+                    <span>
+                      {
+                        '<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+                      }
+                    </span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Propósito</strong>: Configura la ventana gráfica
+                      para que el diseño de la página sea responsivo (se ajuste
+                      a diferentes tamaños de pantalla).
+                    </li>
+                    <li>
+                      <strong>Importancia</strong>: Es crucial para que las
+                      páginas web se vean bien en dispositivos móviles y
+                      tabletas.
+                    </li>
+                  </ul>
+                  <br />
+                  <h3>Otros Metadatos Útiles</h3>
+                  <br />
+                  <p>
+                    <span>{'<link rel="icon" href="favicon.ico">'}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Propósito</strong>: Vincula un ícono que se
+                      muestra en la pestaña del navegador.
+                    </li>
+                    <li>
+                      <strong>Importancia</strong>: Mejora la apariencia
+                      profesional de la página y ayuda a los usuarios a
+                      identificar rápidamente tu sitio.
+                    </li>
+                  </ul>
+                  <p>
+                    <span>{'<meta http-equiv="refresh" content="30">'}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Propósito</strong>: Actualiza la página
+                      automáticamente cada cierto tiempo (en este caso, cada 30
+                      segundos).
+                    </li>
+                    <li>
+                      <strong>Importancia</strong>: Puede ser útil para páginas
+                      que muestran contenido dinámico que debe estar siempre
+                      actualizado.
+                    </li>
+                  </ul>
+                </article>
+                <hr />
+                <article id="etiquetas-bloque">
+                  <h2>Etiquetas de bloque en HTML</h2>
+                  <p>
+                    Las etiquetas de bloque en HTML son elementos que crean una
+                    separación visual y lógica en el contenido de una página
+                    web, ocupando el ancho completo del contenedor en el que se
+                    encuentran. Estas etiquetas organizan y estructuran el
+                    contenido en secciones claramente definidas, mejorando tanto
+                    la legibilidad para los usuarios como la semántica del
+                    documento para los motores de búsqueda y las tecnologías
+                    asistivas.
+                  </p>
+                  <p>
+                    A continuacion podemos observar una lista de las principales
+                    etiquetas de bloque en HTML junto con una explicación
+                    detallada de cómo funciona cada una:
+                  </p>
+                  <br />
+                  <p>
+                    <span>{"<div>"}</span> (Division)
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Es un contenedor genérico
+                      utilizado para agrupar otros elementos HTML. No tiene
+                      ningún significado específico por sí mismo, pero se usa
+                      para aplicar estilos o scripts a bloques de contenido.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Agrupar secciones de
+                      contenido para facilitar el diseño y la organización.
+                    </li>
+                  </ul>
+                  <CodeBox
+                    skeletonLines={3}
+                    getTabs={async () => {
+                      return [
+                        {
+                          label: "etiqueta-div.html",
+                          content: fromStringToCode(
+                            await fetchCode("etiqueta-div.html")
+                          ),
+                        },
+                      ];
+                    }}
+                  />
                 </article>
               </section>
             </div>

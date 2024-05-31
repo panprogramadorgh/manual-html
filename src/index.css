@@ -114,6 +114,10 @@ strong {
   font-weight: 800;
 }
 
+li {
+  margin-bottom: 20px;
+}
+
 li strong {
   color: var(--text-color);
 }
