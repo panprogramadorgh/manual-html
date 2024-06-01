@@ -317,7 +317,7 @@ function App() {
                 </article>
                 <hr />
                 <article id="estructura-documentos">
-                <h2>Estructura basica de los documentos</h2>
+                  <h2>Estructura basica de los documentos</h2>
                   <p>
                     Cuando queremos desarrollar una pagina web debemos generar
                     una estructura base sobre la que empezaremos a escribir el
@@ -371,7 +371,7 @@ function App() {
                 </article>
                 <hr />
                 <article id="atributos-etiquetas">
-                <h2>Explicacion de los atributos de etiquetas</h2>
+                  <h2>Explicacion de los atributos de etiquetas</h2>
                   <p>
                     Los atributos en HTML son características o propiedades que
                     se añaden a las etiquetas HTML para proporcionar información
@@ -620,7 +620,7 @@ function App() {
                   </ul>
                 </article>
                 <hr />
-                <article id="etiquetas-bloque">
+                <article id="explicacion-etiquetas-bloque">
                   <h2>Etiquetas de bloque en HTML</h2>
                   <p>
                     Las etiquetas de bloque en HTML son elementos que crean una
@@ -637,7 +637,9 @@ function App() {
                     etiquetas de bloque en HTML junto con una explicación
                     detallada de cómo funciona cada una:
                   </p>
-                  <br />
+                </article>
+                <br />
+                <article id="etiqueta-div">
                   <p>
                     <span>{"<div>"}</span> (Division)
                   </p>
@@ -671,6 +673,9 @@ function App() {
                       />
                     }
                   />
+                </article>
+                <hr />
+                <article id="etiqueta-p">
                   <p>
                     <span>{"<p>"}</span> (Paragraph)
                   </p>
@@ -703,34 +708,705 @@ function App() {
                       />
                     }
                   />
+                </article>
+                <hr />
+                <article id="etiquetas-encabezados">
                   <p>
-                    <span>{"<h1>"}</span>{" a "}<span>{"h6"}</span> (Headings)
+                    <span>{"<h1>"}</span>
+                    {" a "}
+                    <span>{"h6"}</span> (Headings)
                   </p>
                   <ul>
                     <li>
-                      <strong>Descripción</strong>: Representan los encabezados de una sección. <span>{"<h1>"}</span> es el nivel más alto (título principal) y <span>{"<h6>"}</span> es el más bajo (subtítulo menos importante).
+                      <strong>Descripción</strong>: Representan los encabezados
+                      de una sección. <span>{"<h1>"}</span> es el nivel más alto
+                      (título principal) y <span>{"<h6>"}</span> es el más bajo
+                      (subtítulo menos importante).
                     </li>
                     <li>
-                    <strong>Uso típico</strong>: Organizar el contenido en secciones jerárquicas, mejorando la estructura y accesibilidad del documento.
+                      <strong>Uso típico</strong>: Organizar el contenido en
+                      secciones jerárquicas, mejorando la estructura y
+                      accesibilidad del documento.
                     </li>
                   </ul>
                   <CodeBoxPage
                     page={<Page page="/code/encabezados.html" />}
                     codeBox={
                       <CodeBox
-                        skeletonLines={1}
+                        skeletonLines={3}
                         getTabs={async () => {
                           return [
                             {
-                              label: "etiqueta-p.html",
+                              label: "encabezados.html",
                               content: fromStringToCode(
-                                await fetchCode("etiqueta-p.html")
+                                await fetchCode("encabezados.html")
                               ),
                             },
                           ];
                         }}
                       />
                     }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-ul">
+                  <p>
+                    <span>{"<ul>"}</span> (Unordered List)
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Define una lista
+                      desordenada, usualmente representada con viñetas.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Listar elementos donde el
+                      orden no es importante.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-ul.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={5}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-ul.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-ul.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-ol">
+                  <p>
+                    <span>{"<ol>"}</span>
+                    (Ordered List)
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Define una lista ordenada,
+                      usualmente representada con números o letras.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Listar elementos donde el
+                      orden sí es importante.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-ol.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={5}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-ol.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-ol.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-header">
+                  <p>
+                    <span>{"<header>"}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Representa un contenedor
+                      para contenido introductorio o conjunto de enlaces de
+                      navegación. Puede contener encabezados, logotipos, íconos,
+                      etc.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Encabezados de secciones o
+                      del documento completo.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-header.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={9}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-header.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-header.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-footer">
+                  <p>
+                    <span>{"<footer>"}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Representa un pie de página
+                      para su sección más cercana, como un documento o un
+                      artículo. Puede contener información de autor, enlaces a
+                      términos relacionados, etc.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Información de pie de página,
+                      como derechos de autor o enlaces importantes.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-footer.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={3}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-footer.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-footer.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-article">
+                  <p>
+                    <span>{"<article>"}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Representa un contenido
+                      autónomo que podría distribuirse independientemente del
+                      resto del documento.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Artículos de noticias,
+                      publicaciones de blog, comentarios de usuarios, etc.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-article.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={4}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-article.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-article.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-main">
+                  <p>
+                    <span>{"<main>"}</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Representa el contenido
+                      principal de un documento. Debe haber solo un{" "}
+                      <span>{"<main>"}</span> por documento.
+                    </li>
+                    <li>
+                      <strong>Uso típico</strong>: Contenido principal que es
+                      único y central para la funcionalidad de la página.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-main.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={4}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-main.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-main.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="explicacion-etiquetas-linea">
+                  <h2>Etiquetas en linea</h2>
+                  <p>
+                    Las etiquetas en línea son aquellas que no inician una nueva
+                    línea cuando se utilizan. Esto significa que pueden estar al
+                    lado de otros elementos en la misma línea y su contenido no
+                    afecta el flujo del documento de una manera tan disruptiva
+                    como las etiquetas de bloque. En general, estas etiquetas
+                    suelen utilizarse para marcar partes específicas del texto o
+                    para realizar tareas específicas sin alterar la estructura
+                    general del contenido.
+                  </p>
+                  <h3>Características de las etiquetas en línea:</h3>
+                  <ul>
+                    <li>
+                      <strong>No interrumpen el flujo del documento</strong>: Se
+                      muestran en la misma línea en la que se insertan, a menos
+                      que el contenedor no tenga suficiente espacio, en cuyo
+                      caso, el contenido se ajustará automáticamente a la
+                      siguiente línea.
+                    </li>
+                    <li>
+                      <strong>Contenido limitado</strong>: Generalmente, las
+                      etiquetas en línea solo contienen texto u otras etiquetas
+                      en línea, aunque hay excepciones.
+                    </li>
+                    <li>
+                      <strong>Usos específicos</strong>: Se usan para estilizar
+                      texto, crear enlaces, insertar imágenes dentro de líneas
+                      de texto, entre otros.
+                    </li>
+                  </ul>
+                  <br />
+                  <h3>Ejemplos y usos de etiquetas en línea:</h3>
+                </article>
+                <br />
+                <article id="etiqueta-b">
+                  <p>
+                    <span>{"<b>"}</span> - Negrita
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<b>"}</span> se usa para mostrar el texto en
+                      negrita. No tiene ningún significado semántico, por lo que
+                      se usa principalmente para darle énfasis visual.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para resaltar visualmente el texto.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-b.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-b.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-b.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-i">
+                  <p>
+                    <span>{"<i>"}</span> - Cursiva
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<i>"}</span> se usa para mostrar el texto en
+                      cursiva. Similar a <span>{"<b>"}</span>, no tiene un
+                      significado semántico específico.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para enfatizar visualmente el texto,
+                      a menudo usado para títulos de obras, nombres científicos,
+                      palabras extranjeras, etc.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-i.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-i.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-i.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-u">
+                  <p>
+                    <span>{"<u>"}</span> - Subrayado
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<u>"}</span> se usa para subrayar texto.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para enfatizar visualmente el texto.
+                      Se usa con menor frecuencia ya que el subrayado puede
+                      confundirse con enlaces.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-u.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-u.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-u.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-small">
+                  <p>
+                    <span>{"<small>"}</span> - Texto pequeño
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<small>"}</span> se usa para mostrar el texto en
+                      un tamaño más pequeño que el texto circundante.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para indicar notas al pie, avisos
+                      legales o aclaraciones.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-small.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-small.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-small.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-mark">
+                  <p>
+                    <span>{"<mark>"}</span> - Resaltar
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<mark>"}</span> se usa para resaltar texto,
+                      similar a un marcador.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para enfatizar texto importante o
+                      destacarlo como si fuera con un marcador.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-mark.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-mark.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-mark.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-sub">
+                  <p>
+                    <span>{"<sub>"}</span> - Subíndice
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<sub>"}</span> se usa para mostrar texto como
+                      subíndice.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para fórmulas químicas, matemáticas
+                      y anotaciones.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-sub.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-sub.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-sub.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-sup">
+                  <p>
+                    <span>{"<sup>"}</span> - Superíndice
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<sup>"}</span> se usa para mostrar texto como
+                      superíndice.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para exponentes matemáticos,
+                      referencias y anotaciones.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-sup.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-sup.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-sup.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-strong">
+                  <p>
+                    <span>{"<strong>"}</span> - Énfasis fuerte
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<strong>"}</span> se usa para indicar que el texto
+                      tiene una importancia fuerte. Por defecto, el texto se
+                      muestra en negrita.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para enfatizar texto con importancia
+                      semántica.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-strong.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-strong.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-strong.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="etiqueta-em">
+                  <p>
+                    <span>{"<em>"}</span> - Énfasis
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: La etiqueta{" "}
+                      <span>{"<em>"}</span> se usa para enfatizar el texto. Por
+                      defecto, el texto se muestra en cursiva.
+                    </li>
+                    <li>
+                      <strong>Uso</strong>: Para darle énfasis a una palabra o
+                      frase.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-em.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-em.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-em.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
+                </article>
+                <hr />
+                <article id="imagenes-html">
+                  <h2>Imagenes en HTML</h2>
+                  <p>
+                    Las imágenes juegan un papel crucial en los documentos HTML,
+                    ya que ayudan a hacer el contenido más atractivo y
+                    comprensible. Aquí tienes un resumen sobre su uso:
+                  </p>
+                  <h3>Ventajas de Utilizar Imágenes en HTML:</h3>
+                  <ul>
+                    <li>
+                      <strong>Mejora Visual</strong>: Las imágenes hacen que una
+                      página web sea visualmente atractiva y profesional.
+                    </li>
+                    <li>
+                      <strong>Claridad y Comprensión</strong>: Pueden ayudar a
+                      aclarar conceptos complejos, ofreciendo una representación
+                      visual de lo que se está describiendo en el texto.
+                    </li>
+                    <li>
+                      <strong>Engagement del Usuario</strong>: Las imágenes
+                      pueden captar la atención del usuario y mantener su
+                      interés en la página.
+                    </li>
+                    <li>
+                      <strong>SEO</strong>: Las imágenes bien optimizadas y con
+                      etiquetas alt adecuadas pueden mejorar el SEO de una
+                      página web.
+                    </li>
+                  </ul>
+                  <h3>Características de las Imágenes en HTML:</h3>
+                  <ul>
+                    <li>
+                      <strong>Formato</strong>: Las imágenes pueden estar en
+                      varios formatos como JPEG, PNG, GIF, SVG, etc.
+                    </li>
+                    <li>
+                      <strong>Tamaño</strong>: Se puede controlar el tamaño de
+                      las imágenes usando CSS o atributos HTML.
+                    </li>
+                    <li>
+                      <strong>Atributos Alt</strong>: Descripciones alternativas
+                      de las imágenes que mejoran la accesibilidad y el SEO.
+                    </li>
+                  </ul>
+                </article>
+                <hr />
+                <article id="etiqueta-img">
+                  <h2>Etiqueta {"<img>"} en HTML</h2>
+                  <p>
+                    Para insertar una imagen en un documento HTML, se utiliza la
+                    etiqueta <span>{"<img>"}</span>. Esta etiqueta es una
+                    etiqueta vacía, lo que significa que no tiene una etiqueta
+                    de cierre. Aquí están los principales atributos que se
+                    pueden usar con <span>{"<img>"}</span>:
+                  </p>
+                  <h3>
+                    Atributos Comunes de la Etiqueta <span>{"<img>"}</span>
+                  </h3>
+                  <ul>
+                    <li>src: Especifica la URL de la imagen.</li>
+                    <li>
+                      <span>alt</span>: Proporciona un texto alternativo para la
+                      imagen si no puede ser mostrada.
+                    </li>
+                    <li>
+                      <span>width</span> y <span>height</span>: Especifican el
+                      tamaño de la imagen en píxeles.
+                    </li>
+                    <li>
+                      <span>title</span>: Proporciona información adicional
+                      sobre la imagen (aparece como un tooltip).
+                    </li>
+                    <li>
+                      <span>loading</span>: Puede ser lazy para la carga
+                      diferida de la imagen.
+                    </li>
+                  </ul>
+                  <CodeBox
+                    skeletonLines={1}
+                    getTabs={async () => {
+                      return [
+                        {
+                          label: "etiqueta-img.html",
+                          content: fromStringToCode(
+                            await fetchCode("etiqueta-img.html")
+                          ),
+                        },
+                      ];
+                    }}
+                  />
+                  <img
+                    src="/imgs/you-said-it-pal.webp"
+                    alt="Meme de Peter Griffing"
                   />
                 </article>
               </section>
