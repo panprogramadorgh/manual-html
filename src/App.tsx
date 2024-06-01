@@ -264,9 +264,8 @@ function App() {
                   </p>
                 </article>
                 <hr />
-                <article id="estructura-html">
-                  <h2>Estructura de HTML</h2>
-                  <h3>Estructura de las etiquetas</h3>
+                <article id="estructura-etiquetas">
+                  <h2>Estructura de las etiquetas</h2>
                   <p>
                     Como ya hemos mencionado con anterioridad, HTML es un
                     lenguaje marcado de hypertexto que emplea etiquetas para
@@ -315,7 +314,10 @@ function App() {
                       ];
                     }}
                   />
-                  <h3>Estructura basica de los documentos</h3>
+                </article>
+                <hr />
+                <article id="estructura-documentos">
+                <h2>Estructura basica de los documentos</h2>
                   <p>
                     Cuando queremos desarrollar una pagina web debemos generar
                     una estructura base sobre la que empezaremos a escribir el
@@ -366,7 +368,10 @@ function App() {
                     etiquetas que definiran la estructura de la pagina.
                   </p>
                   <br />
-                  <h3>Explicacion de los atributos de etiquetas</h3>
+                </article>
+                <hr />
+                <article id="atributos-etiquetas">
+                <h2>Explicacion de los atributos de etiquetas</h2>
                   <p>
                     Los atributos en HTML son características o propiedades que
                     se añaden a las etiquetas HTML para proporcionar información
@@ -680,9 +685,53 @@ function App() {
                       separados, mejorando la legibilidad.
                     </li>
                   </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/etiqueta-p.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-p.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-p.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
                   <p>
-                    <span>{"<h1> a <h6>"}</span> (Headings)
+                    <span>{"<h1>"}</span>{" a "}<span>{"h6"}</span> (Headings)
                   </p>
+                  <ul>
+                    <li>
+                      <strong>Descripción</strong>: Representan los encabezados de una sección. <span>{"<h1>"}</span> es el nivel más alto (título principal) y <span>{"<h6>"}</span> es el más bajo (subtítulo menos importante).
+                    </li>
+                    <li>
+                    <strong>Uso típico</strong>: Organizar el contenido en secciones jerárquicas, mejorando la estructura y accesibilidad del documento.
+                    </li>
+                  </ul>
+                  <CodeBoxPage
+                    page={<Page page="/code/encabezados.html" />}
+                    codeBox={
+                      <CodeBox
+                        skeletonLines={1}
+                        getTabs={async () => {
+                          return [
+                            {
+                              label: "etiqueta-p.html",
+                              content: fromStringToCode(
+                                await fetchCode("etiqueta-p.html")
+                              ),
+                            },
+                          ];
+                        }}
+                      />
+                    }
+                  />
                 </article>
               </section>
             </div>

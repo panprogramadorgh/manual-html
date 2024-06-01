@@ -22,7 +22,17 @@ const asideOptions: { [key: string]: AsideOption } = {
     label: "Historia de HTML",
   },
   "estructura-html": {
+    header: true,
     label: "Estructura de HTML",
+  },
+  "estructura-etiquetas": {
+    label: "Estructura etiquetas"
+  },
+  "estructura-documentos": {
+    label: "Estructura documentos"
+  },
+  "atributos-etiquetas": {
+    label: "Estructura atributos"
   },
   metadatos: {
     header: true,
