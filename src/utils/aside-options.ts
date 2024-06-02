@@ -122,6 +122,9 @@ const asideOptions: { [key: string]: AsideOption } = {
   "etiqueta-img": {
     label: "Etiqueta img",
   },
+  "elemento-canvas": {
+    label: "Elemento canvas",
+  },
 };
 
 export default asideOptions;

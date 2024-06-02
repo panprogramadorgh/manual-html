@@ -15,6 +15,7 @@ import { getLocalStorage, setLocalStorage } from "./utils/local-storage";
 
 import "./App.css";
 import CodeBoxPage from "./components/CodeBoxPage";
+import CanvasGame from "./components/CanvasGame";
 
 function App() {
   const [showAside, setShowAside] = useState<boolean>(
@@ -1408,6 +1409,52 @@ function App() {
                     src="/imgs/you-said-it-pal.webp"
                     alt="Meme de Peter Griffing"
                   />
+                </article>
+                <hr />
+                <article id="elemento-canvas">
+                  <h2>Introducción a la API Canvas de HTML5</h2>
+                  <p>
+                    La API Canvas de HTML5 es una herramienta que te permite
+                    dibujar gráficos en una página web. Imagina que es como un
+                    lienzo en blanco en el que puedes pintar usando JavaScript.
+                  </p>
+                  <h3>¿Qué es el elemento {"<canvas>"}?</h3>
+                  <p>
+                    Canvas es una etiqueta de HTML que crea un espacio en tu
+                    página web donde puedes dibujar. No muestra nada por sí
+                    misma hasta que le dices qué dibujar mediante JavaScript.
+                  </p>
+                  <CodeBox
+                    skeletonLines={1}
+                    getTabs={async () => {
+                      return [
+                        {
+                          label: "elemento-canvas.html",
+                          content: fromStringToCode(
+                            await fetchCode("elemento-canvas.html")
+                          ),
+                        },
+                      ];
+                    }}
+                  />
+                  <h3>Ventajas de Usar Canvas</h3>
+                  <ul>
+                    <li>
+                      <strong>Versatilidad</strong>: Puedes crear una amplia
+                      variedad de gráficos, desde simples formas geométricas
+                      hasta complejas animaciones y juegos.
+                    </li>
+                    <li>
+                      <strong>Control Total</strong>: Tienes un control
+                      detallado sobre cada píxel del área de dibujo.
+                    </li>
+                    <li>
+                      <strong>Interactividad</strong>: Permite crear
+                      experiencias interactivas, como juegos o gráficos que
+                      responden a la entrada del usuario.
+                    </li>
+                  </ul>
+                  <CanvasGame />
                 </article>
               </section>
             </div>
