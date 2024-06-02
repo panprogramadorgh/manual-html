@@ -9,15 +9,27 @@ export function square(
   ctx.fillRect(x, y, size, size);
 }
 
-export function mainloop(
-  canvas: HTMLCanvasElement,
-  squareSize: number,
-  squareSpeed: number
-): number {
+interface MainloopParams {
+  canvas: HTMLCanvasElement;
+  initSquarePos: [number, number];
+  squareSize: number;
+  squareSpeed: number;
+  frames: number;
+  updateSquarePos: (newPos: [number, number]) => void;
+}
+
+export function mainloop({
+  canvas,
+  initSquarePos,
+  squareSize,
+  squareSpeed,
+  frames,
+  updateSquarePos,
+}: MainloopParams): number {
   const ctx = canvas.getContext("2d");
   if (ctx) {
     ctx.imageSmoothingEnabled = false;
-    let squarePos = [0, 0];
+    let squarePos = initSquarePos;
     let direction = {
       x: 1,
       y: 1,
@@ -29,11 +41,13 @@ export function mainloop(
       if (squarePos[1] < 0 || squarePos[1] > canvas.height - squareSize) {
         direction.y *= -1;
       }
-      squarePos[0] += squareSpeed * direction.x;
-      squarePos[1] += squareSpeed * direction.y;
+      squarePos[0] += (squareSpeed / frames) * direction.x;
+      squarePos[1] += (squareSpeed / frames) * direction.y;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       square(ctx, squarePos[0], squarePos[1], squareSize, "#0099ff");
-    }, 16.6);
+
+      updateSquarePos(squarePos);
+    }, 1000 / frames);
     return interval;
   }
   return 0;

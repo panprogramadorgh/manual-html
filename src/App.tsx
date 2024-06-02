@@ -1425,7 +1425,7 @@ function App() {
                     misma hasta que le dices qué dibujar mediante JavaScript.
                   </p>
                   <CodeBox
-                    skeletonLines={1}
+                    skeletonLines={6}
                     getTabs={async () => {
                       return [
                         {

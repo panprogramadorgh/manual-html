@@ -1,10 +1,11 @@
 .CanvasGame canvas {
   border-radius: var(--rounded);
   background: var(--main-extra-dark);
-  /* height: 40vh;
-  width: 100%; */
 }
 
 .CanvasGame__container {
   padding-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
