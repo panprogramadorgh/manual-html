@@ -1,15 +1,17 @@
 # Manual HTML
 
+Este proyecto consiste en un manual de HTML 5 donde se muestran las principles caracteristicas del lenguaje de marcas.
+El proyecto esta dearrollado con la libreria de interfaces de usuario desarollada por meta React.
+
 ## Iniciar proyecto
 
-Para iniciar le proyecto ejecutar `npm run dev`, pero antes instalar las dependencias con `npm i`.
+En primer lugar nos bajarmos nodejs en nuestra maquina. Como minimo es necesaria la version 18.
+En segundo lugar abriremos el proyecto con nuestro IDE favorito como por ejemplo VSCODE e instalaremos las dependencias del proyecto, para lo cual ejecutaremos el siguiente comando `npm install`.
+Tras haber instalado las dependencias, arrancaremos el proyecto con el comando `npm run dev`.
+Tendremos un servidor de desarollo levantado en el puerto 5173.
 
 ## TODOS
 
-1. Guardar en localstorage el estado del aside (visible / oculto) ✅
-2. Documentar las 40 caracteristicas de HTML con ejemplos de codigo
-3. Colocar referencias en el aside
-4. Colocar cabeceras para ordenar referencias en el aside
-5. Actualizar dinamicamente el parametro query "content" en funcion de la posicion del scroll
-6. Estandarizar nombres de clases css
-7. Solucionar problema de hover en las cajas de codigo
+1. Actualizar dinamicamente el parametro query "content" en funcion de la posicion del scroll
+2. Estandarizar nombres de clases css
+3. Solucionar problema de hover en las cajas de codigo
