@@ -1,3 +1,5 @@
+import { CanvasUtilsMainloopParams } from "../definitions";
+
 export function square(
   ctx: CanvasRenderingContext2D,
   x: number,
@@ -9,31 +11,21 @@ export function square(
   ctx.fillRect(x, y, size, size);
 }
 
-interface MainloopParams {
-  canvas: HTMLCanvasElement;
-  initSquarePos: [number, number];
-  squareSize: number;
-  squareSpeed: number;
-  frames: number;
-  updateSquarePos: (newPos: [number, number]) => void;
-}
-
 export function mainloop({
   canvas,
   initSquarePos,
+  initSquareDirection,
   squareSize,
   squareSpeed,
   frames,
   updateSquarePos,
-}: MainloopParams): number {
+  updateSquareDirection,
+}: CanvasUtilsMainloopParams): number {
   const ctx = canvas.getContext("2d");
   if (ctx) {
     ctx.imageSmoothingEnabled = false;
     let squarePos = initSquarePos;
-    let direction = {
-      x: 1,
-      y: 1,
-    };
+    let direction = initSquareDirection;
     const interval = setInterval(() => {
       if (squarePos[0] < 0 || squarePos[0] > canvas.width - squareSize) {
         direction.x *= -1;
@@ -47,6 +39,7 @@ export function mainloop({
       square(ctx, squarePos[0], squarePos[1], squareSize, "#0099ff");
 
       updateSquarePos(squarePos);
+      updateSquareDirection(direction);
     }, 1000 / frames);
     return interval;
   }

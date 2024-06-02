@@ -1,11 +1,14 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { mainloop, stoploop } from "../utils/canvas/canvas-utils";
 import "./CanvasGame.css";
+import { CanvasGameSquareDirection } from "../utils/definitions";
 
 interface Props {}
 
 const CanvasGame: FC<Props> = () => {
   const [squarePos, setSquarePos] = useState<[number, number]>([0, 0]);
+  const [squareDirection, setSquareDirection] =
+    useState<CanvasGameSquareDirection>({ x: 1, y: 1 });
   const [squareSize, setSquareSize] = useState<number>(100);
   const [squareSpeed, setSquareSpeed] = useState<number>(100);
   const [frames, setFrames] = useState<number>(60);
@@ -20,11 +23,15 @@ const CanvasGame: FC<Props> = () => {
       identifier = mainloop({
         canvas,
         initSquarePos: squarePos,
+        initSquareDirection: squareDirection,
         squareSize,
         squareSpeed,
         frames,
         updateSquarePos(newPos) {
           setSquarePos(newPos);
+        },
+        updateSquareDirection(newDirection) {
+          setSquareDirection(newDirection);
         },
       });
     }
