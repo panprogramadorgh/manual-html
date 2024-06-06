@@ -15,4 +15,4 @@ Tendremos un servidor de desarollo levantado en el puerto 5173.
 1. Actualizar dinamicamente el parametro query "content" en funcion de la posicion del scroll
 2. Estandarizar nombres de clases css
 3. Solucionar problema de hover en las cajas de codigo
-4. Solucionar problema de coloreado de codigo con etiquetas con atributos
+4. Solucionar problema de coloreado de codigo con etiquetas con atributos en multiples lineas

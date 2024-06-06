@@ -21,10 +21,12 @@ function fromStringToCode(str: string): ReactNode[] {
         .join("");
     };
 
-    // FIXME: Error con las expresiones regulares
-    // tags coloring
+    // FIXME: No se colorean las etiquetas con atributos escritos en varias lineas
     const colorTags = () => {
-      const regexp = new RegExp("</?[a-zA-Z][a-zA-Z0-9]*\\s*[a-zA-Z='\" ]*>");
+      const regexp = new RegExp(
+        "</?[a-zA-Z][a-zA-Z0-9]*\\s*[a-zA-Z0-9='\"/\\-. ]*>"
+      );
+
       const ocurrence = currentLine().match(regexp);
       // In case there are no more ocurrences the functions returns
       if (!ocurrence) return;
@@ -44,7 +46,7 @@ function fromStringToCode(str: string): ReactNode[] {
             : spaceAfterTagNameIndex
         )
       );
-      if (tagName.trim() === "") return;
+
       tokens.splice(ocurrence.index! + tagOffset, tagName.length, () => {
         return <span className="token tag">{tagName}</span>;
       });
@@ -125,7 +127,7 @@ function fromStringToCode(str: string): ReactNode[] {
     };
 
     // Ejecutando en el orden deseado todas las funciones que alteraran la matriz de tokens
-    [colorStrings, colorTags, colorAttrs, colorSymbols].forEach((fn) => fn());
+    [colorTags, colorAttrs, colorStrings, colorSymbols].forEach((fn) => fn());
 
     const reactNodeLine = (
       <>
