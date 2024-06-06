@@ -135,6 +135,7 @@
   position: relative;
   transition: all 0.1s;
   z-index: 100;
+  text-wrap: nowrap;
 }
 
 .CodeBox__line-container__line.fadeout-5 {

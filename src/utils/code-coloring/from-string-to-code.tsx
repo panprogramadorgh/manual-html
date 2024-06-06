@@ -12,34 +12,44 @@ function fromStringToCode(str: string): ReactNode[] {
 
   const reactNodeLines = lines.map((line) => {
     let tokens: (string | FC)[] = line.split("");
-    let currentLine = () => {
+    const currentLine = () => {
       return tokens
         .map((token) => {
-          if (typeof token === "function") return " ";
+          if (typeof token === "function") return "&";
           return token;
         })
         .join("");
     };
 
+    // FIXME: Error con las expresiones regulares
     // tags coloring
     const colorTags = () => {
-      targetWords.tags.forEach((tag) => {
-        const replacetokens = () => {
-          const kwIndex = currentLine().indexOf(tag);
-          if (kwIndex === -1) return;
-          const tagPrefix = ["/", "<"];
-          const tagSubfix = [" ", ">"];
-          if (!tagPrefix.includes(currentLine()[kwIndex - 1])) return;
-          if (!tagSubfix.includes(currentLine()[kwIndex + tag.length])) return;
+      const regexp = new RegExp("</?[a-zA-Z][a-zA-Z0-9]*\\s*[a-zA-Z='\" ]*>");
+      const ocurrence = currentLine().match(regexp);
+      // In case there are no more ocurrences the functions returns
+      if (!ocurrence) return;
+      const tagOffset = ocurrence[0][1] === "/" ? 2 : 1;
+      const closingTagIndex = currentLine().indexOf(">", ocurrence.index);
+      const spaceAfterTagNameIndex = currentLine().indexOf(
+        " ",
+        ocurrence.index
+      );
 
-          tokens.splice(kwIndex, tag.length, () => (
-            <span className="token tag">{tag}</span>
-          ));
-
-          replacetokens();
-        };
-        replacetokens();
+      const tagName = currentLine().substring(
+        ocurrence.index! + tagOffset,
+        Math.min(
+          closingTagIndex,
+          spaceAfterTagNameIndex === -1
+            ? closingTagIndex
+            : spaceAfterTagNameIndex
+        )
+      );
+      if (tagName.trim() === "") return;
+      tokens.splice(ocurrence.index! + tagOffset, tagName.length, () => {
+        return <span className="token tag">{tagName}</span>;
       });
+      // Checks for more ocurrences
+      colorTags();
     };
 
     // HTML attrs coloring
