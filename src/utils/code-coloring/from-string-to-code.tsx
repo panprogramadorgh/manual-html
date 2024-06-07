@@ -24,14 +24,17 @@ function fromStringToCode(str: string): ReactNode[] {
     // FIXME: No se colorean las etiquetas con atributos escritos en varias lineas
     const colorTags = () => {
       const regexp = new RegExp(
-        "</?[a-zA-Z][a-zA-Z0-9]*\\s*[a-zA-Z0-9='\"/\\-. ]*>"
+        "</?[a-zA-Z][a-zA-Z0-9]*\\s*[a-zA-Z0-9='\"/\\-. ]*>?"
       );
 
       const ocurrence = currentLine().match(regexp);
       // In case there are no more ocurrences the functions returns
       if (!ocurrence) return;
       const tagOffset = ocurrence[0][1] === "/" ? 2 : 1;
-      const closingTagIndex = currentLine().indexOf(">", ocurrence.index);
+      const closingTagIndex =
+        currentLine().indexOf(">", ocurrence.index) === -1
+          ? currentLine().length
+          : currentLine().indexOf(">", ocurrence.index);
       const spaceAfterTagNameIndex = currentLine().indexOf(
         " ",
         ocurrence.index
